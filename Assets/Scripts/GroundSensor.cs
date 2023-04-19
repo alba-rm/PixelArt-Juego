@@ -6,9 +6,12 @@ public class GroundSensor : MonoBehaviour
 {
     private PlayerControler controller;
     public bool isGrounded;
+    Animator anim;
+    
     // Start is called before the first frame update
     void Awake() 
     {
+        anim = GetComponent<Animator>();
         controller = GetComponentInParent<PlayerControler>();
     }
     void OnTriggerEnter2D(Collider2D other) 
@@ -16,6 +19,7 @@ public class GroundSensor : MonoBehaviour
         if(other.gameObject.layer == 3)
         {
             isGrounded = true;
+            anim.SetBool("IsJumping", false);
         }
     }
     void OnTriggerStay2D(Collider2D other) 
@@ -23,6 +27,7 @@ public class GroundSensor : MonoBehaviour
         if(other.gameObject.layer == 3)
         {
             isGrounded = true;
+            controller.anim.SetBool("IsJumping", false);
         }
     }
     void OnTriggerExit2D(Collider2D other) 
@@ -30,6 +35,7 @@ public class GroundSensor : MonoBehaviour
         if(other.gameObject.layer == 3)
         {
             isGrounded = false;
+            controller.anim.SetBool("IsJumping", true);
         }
     }
    

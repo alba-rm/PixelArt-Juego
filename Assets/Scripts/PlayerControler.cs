@@ -10,10 +10,11 @@ public class PlayerControler : MonoBehaviour
     private Rigidbody2D rBody;
     private SpriteRenderer spriteRenderer;
     private GroundSensor sensor;
-
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rBody = GetComponent<Rigidbody2D>();
         sensor = GameObject.Find("GroundSensor").GetComponent<GroundSensor>();
@@ -26,18 +27,26 @@ public class PlayerControler : MonoBehaviour
 
         if(horizontal < 0)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
+            anim.SetBool("IsRunning", true);
         
         }
         else if(horizontal > 0)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
+            anim.SetBool("IsRunning", true);
         
+        }
+        else
+        {
+            anim.SetBool("IsRunning", false);
         }
         if(Input.GetButtonDown("Jump") && sensor.isGrounded)
         {
             rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            anim.SetBool("IsJumping", true);
         }
+
     }
     void FixedUpdate() 
     {

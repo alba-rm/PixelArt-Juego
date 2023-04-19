@@ -271,6 +271,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: JUMP_8
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 319
+        width: 156
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69bbf7b44bc311545b187c07895626af
+      internalID: -457887053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JUMP_9
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 322
+        width: 131
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ded99d687b93484490a6af94aa2ede3
+      internalID: -525007972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -283,12 +325,14 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       JUMP_6: -1743149449
+      JUMP_8: -457887053
       JUMP_0: 2029263003
       JUMP_3: -1708573257
       JUMP_2: -666615453
       JUMP_7: 601180834
       JUMP_5: 500916382
       JUMP_1: 289504265
+      JUMP_9: -525007972
       JUMP_4: -1704256111
   spritePackingTag: 
   pSDRemoveMatte: 0
