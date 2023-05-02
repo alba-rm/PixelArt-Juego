@@ -7,12 +7,17 @@ public class GroundSensor : MonoBehaviour
     private PlayerControler controller;
     public bool isGrounded;
     
+    SFXManager sfxManager;
+
+    SoundManager soundManager;
+
     
     // Start is called before the first frame update
     void Awake() 
     {
-       
         controller = GetComponentInParent<PlayerControler>();
+        sfxManager = GameObject.Find("SFXManager").GetComponent<SFXManager>();
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
     void OnTriggerEnter2D(Collider2D other) 
     {
@@ -21,6 +26,21 @@ public class GroundSensor : MonoBehaviour
             isGrounded = true;
             controller.anim.SetBool("IsJumping", false);
             
+        }
+        else if (other.gameObject.layer == 6)
+        {
+            Debug.Log("Moneda conseguida");
+
+            Coin coin = other.gameObject.GetComponent<Coin>();
+            coin.Get();
+        }
+         if(other.gameObject.tag == "DeadZone")
+        {
+            Debug.Log("Has muerto");
+
+            soundManager.StopBGM();
+            sfxManager.PersonajeDeath(); 
+
         }
         else if (other.gameObject.layer == 6)
         {

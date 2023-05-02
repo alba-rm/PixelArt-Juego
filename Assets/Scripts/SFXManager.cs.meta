@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 1219b5d04a7184d46a4eab7a803d0df2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - personajeDeath: {fileID: 8300000, guid: 67d33fd62192c5f43a9e49944162d864, type: 3}
+  - getCoin: {fileID: 8300000, guid: fe128b37eac216840854bdb8a4cd3df2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
