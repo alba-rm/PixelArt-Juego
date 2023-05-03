@@ -5,6 +5,7 @@ using UnityEngine;
 public class GroundSensor : MonoBehaviour
 {
     private PlayerControler controller;
+    
     public bool isGrounded;
     
     SFXManager sfxManager;
@@ -37,18 +38,11 @@ public class GroundSensor : MonoBehaviour
          if(other.gameObject.tag == "DeadZone")
         {
             Debug.Log("Has muerto");
-
             soundManager.StopBGM();
             sfxManager.PersonajeDeath(); 
 
         }
-        else if (other.gameObject.layer == 6)
-        {
-            Debug.Log("Moneda conseguida");
 
-            Coin coin = other.gameObject.GetComponent<Coin>();
-            coin.Get();
-        }
     }
     void OnTriggerStay2D(Collider2D other) 
     {
