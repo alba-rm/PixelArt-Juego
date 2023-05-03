@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - personajeDeath: {fileID: 8300000, guid: 67d33fd62192c5f43a9e49944162d864, type: 3}
   - getCoin: {fileID: 8300000, guid: fe128b37eac216840854bdb8a4cd3df2, type: 3}
+  - chest: {fileID: 8300000, guid: 9f7f118f39e099648b25deeac5e006f2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DeadZone
   - Coin
+  - Bullet
+  - ColisionChest
   layers:
   - Default
   - TransparentFX

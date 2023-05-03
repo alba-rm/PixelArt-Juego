@@ -42,6 +42,15 @@ public class GroundSensor : MonoBehaviour
             sfxManager.PersonajeDeath(); 
 
         }
+        else if (other.gameObject.layer == 7)
+        {
+            Debug.Log("Chest muerto");
+
+            sfxManager.Chest();
+
+            Enemy chest = other.gameObject.GetComponent<Enemy>();
+            chest.Die();
+        }
 
     }
     void OnTriggerStay2D(Collider2D other) 

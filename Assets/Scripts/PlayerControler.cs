@@ -7,10 +7,18 @@ public class PlayerControler : MonoBehaviour
     public float playerSpeed = 2f;
     public float jumpForce = 4f;
     float horizontal;
+
     private Rigidbody2D rBody;
     private SpriteRenderer spriteRenderer;
     private GroundSensor sensor;
     public Animator anim;
+
+    GameManager gameManager;
+
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+    public LayerMask enemyLayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +56,15 @@ public class PlayerControler : MonoBehaviour
             rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("IsJumping", true);
         }
-
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        }
     }
+
     void FixedUpdate() 
     {
         rBody.velocity = new Vector2(horizontal * playerSpeed, rBody.velocity.y);
     }
+
 }
