@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
             Destroy(collision.gameObject);
             soundManager.StopBGM();
             sfxManager.PersonajeDeath();
-            
+            SceneManager.LoadScene(2);
 
         }
         
