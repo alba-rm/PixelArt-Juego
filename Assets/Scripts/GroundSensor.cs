@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GroundSensor : MonoBehaviour
 {
@@ -39,7 +40,8 @@ public class GroundSensor : MonoBehaviour
         {
             Debug.Log("Has muerto");
             soundManager.StopBGM();
-            sfxManager.PersonajeDeath(); 
+            sfxManager.PersonajeDeath();
+            SceneManager.LoadScene(2); 
 
         }
         else if (other.gameObject.layer == 7)
